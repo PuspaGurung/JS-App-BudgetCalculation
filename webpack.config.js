@@ -1,21 +1,16 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     entry: ['@babel/polyfill', './src/js/index.js'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/bundle.js'
     },
+
     devServer: {
         contentBase: './dist'
     },
-    plugins: [
-        new htmlWebpackPlugin({
-            filename: 'index.html',
-            template: './src/index.html'
-        })
-    ],
     module: {
         rules: [
             {
@@ -27,7 +22,30 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    // fallback to style-loader in development
+                    process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "sass-loader"
+                ]
             }
+
         ]
-    }
+    },
+
+
+    plugins: [
+        new htmlWebpackPlugin({
+            filename: 'index.html',
+            template: path.resolve('./src/index.html')
+        }),
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+            chunkFilename: "[id].css"
+        })
+    ]
+
 };
