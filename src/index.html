@@ -5,16 +5,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../dist/css/style.css">
 
     <title>Document</title>
 </head>
 
 <body>
-    <header>
+    <section class="top-header">
         <div class="container">
-            <h1>Hello 23</h1>
+            <div class="budget-summary">
+                <div class="budget-summary__income">
+                    <span class="budget-summary__income-title">INCOME</span>
+                    <span class="budget-summary__income-amount">+45,000</span>
+                </div>
+                <div class="available-budget">
+                    <p class="available-budget__title">Available budget in the month of </p>
+                    <h3 class="available-budget__amount">+45000</h3>
+                </div>
+                <div class="budget-summary__expenses">
+                    <span class="budget-summary__expenses-title">EXPENSES</span>
+                    <span class="budget-summary__expenses-amount">-56,000</span>
+                </div>
+            </div>
         </div>
-    </header>
+    </section>
+    <section class="banner">
+        <div class="container">
+            <div class="budget-entry">
+                <div class="budget-entry__income"><a href="#">Add Income</a></div>
+                <div class="budget-entry__expenses"><a href="#">Add Expenses</a></div>
+
+            </div>
+        </div>
+
+    </section>
+    <section class="main-body">
+        <div class="container">
+            <div class="budget-wrapper">
+                <ul class="budget__income-list">
+                    <h2>INCOME</h2>
+                    <li><span class="budget__income-title">Income topic here</span>
+                        <span class="budget__income-amount"> +50254</span>
+                    </li>
+                    <li><span class="budget__income-title">Income topic here</span>
+                        <span class="budget__income-amount"> +50254</span>
+                    </li>
+                    <li><span class="budget__income-title">Income topic here</span>
+                        <span class="budget__income-amount"> +50254</span>
+                    </li>
+                </ul>
+                <ul class="budget__expenses-list">
+                    <h2>Expenses</h2>
+                    <li><span class="budget__expense-title">Income topic here</span>
+                        <span class="budget__expense-amount"> +50254</span>
+                    </li>
+                    <li><span class="budget__expense-title">Income topic here</span>
+                        <span class="budget__expense-amount"> +50254</span>
+                    </li>
+                    <li><span class="budget__expense-title">Income topic here</span>
+                        <span class="budget__expense-amount"> +50254</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div id="pop-up__box">
+        <div class="income__entry">
+            <h2>INCOME</h2>
+            <form id="income__entry-form">
+                <label for="budget_title">Enter income title:</label>
+                <input type="text" id="budget_title" value="">
+                <label for="budget_amount">Enter amount</label>
+                <input type="text" id="budget_amount" value="">
+                <button type="submit" form="income__entry-form">SUBMIT</button>
+            </form>
+        </div>
+        <div class="expense__entry">
+            <h2>INCOME</h2>
+            <form id="expense__entry-form">
+                <label for="budget_title">Enter income title:</label>
+                <input type="text" id="budget_title" value="">
+                <label for="budget_amount">Enter amount</label>
+                <input type="text" id="budget_amount" value="">
+                <button type="submit" form="expense__entry-form">SUBMIT</button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

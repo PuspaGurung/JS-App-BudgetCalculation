@@ -28,7 +28,7 @@ body {
   box-sizing: border-box;
  font-family: 'Open Sans', sans-serif;
   line-height: 2rem;
-  color: $color-primary;
+
   font-size: $default-font-size;
 }
 
@@ -47,10 +47,18 @@ a,ul,li{
 }
 
 ::selection{
-  background-color: $color-primary;
-  color: $color-white;
+ 
+  color: $color_white;
 }
 .container{
   max-width: 100rem;
   margin: 0 auto;
+}
+
+.div-content{
+min-height: 20rem;
+min-width: 10rem;
+padding: 3rem;
+border: 1px solid #000;
+cursor: Pointer;
 }
