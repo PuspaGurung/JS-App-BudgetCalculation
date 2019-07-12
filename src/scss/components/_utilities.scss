@@ -6,3 +6,14 @@
     font-weight: normal;
     font-size: 1.6rem;
 }
+
+.btn{
+    padding: 1rem 1.5rem;
+    border: none;
+    @include transition-delay-sm;
+    color: $color_grey-light;
+    cursor: pointer;
+    &:hover{
+        opacity: 0.8;
+    }
+}

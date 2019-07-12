@@ -1,3 +1,91 @@
 #pop-up__box{
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba($color_grey-dark, 0.9);
+    opacity: 0.8;
+    z-index: 1000;
+    @include transition-delay-sm;
+    visibility: hidden;
+
+    a.cancel-entry{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $color_grey-light;
+        background: $color_grey-dark;
+        border-radius: 50%    ;
+        -webkit-border-radius: 50%    ;
+        -moz-border-radius: 50%    ;
+        -ms-border-radius: 50%    ;
+        -o-border-radius: 50%    ;
+        padding: 1rem;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        height: 3rem;;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    &:target {
+        opacity: 1;
+        visibility: visible;
+
+        .income__entry,
+        .expense__entry{
+            @include transform-xy-minus50percent-scaleLG;
+        }
+      
+    }
+
+    .income__entry,
+    .expense__entry{
+        width: 40%;
+        background: $color_white;
+        padding: 3rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transition-delay-sm;
+        @include  transform-xy-minus50percent-scaleSM;
+
+        label,input{
+            display: block;
+        }
+        input{
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.7rem 1rem;
+            border: 1px solid $color_grey-dark;
+            &:focus{
+                outline: none;
+                border-color: $color_navy-blue;
+}
+        }
+      
+    }
+
+
+    .income__entry{
+        .heading-tertiary{
+            color: $color_navy-blue;
+            margin-bottom: 1rem;
+        }
+        .btn_submit-income{
+            background: $color_navy-blue;
+        }
+    }
+    .expense__entry{
+        .heading-tertiary{
+            color: $color_red-light;
+            margin-bottom: 1rem;
+        }
+        .btn_submit-expense{
+            background: $color_red-light;
+        }
+    }
+    
 }

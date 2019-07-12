@@ -15,16 +15,16 @@
         <div class="container">
             <div class="budget-summary">
                 <div class="budget-summary__income">
-                    <span class="budget-summary__income-title">INCOME</span>
-                    <span class="budget-summary__income-amount">+45,000</span>
+                    <span class="budget-summary__income-title">SUM INCOME</span>
+                    <span class="budget-summary__income-amount">+ 45,000.00</span>
                 </div>
                 <div class="available-budget">
-                    <p class="available-budget__title">Available budget in the month of </p>
-                    <h3 class="available-budget__amount">+45000</h3>
+                    <p class="available-budget__title">Available budget in the month of <strong>January</strong> </p>
+                    <h2 class=" heading-secondary available-budget__amount">+ 45,000.00</h2>
                 </div>
                 <div class="budget-summary__expense">
-                    <span class="budget-summary__expense-title">EXPENSES</span>
-                    <span class="budget-summary__expense-amount">-56,000</span>
+                    <span class="budget-summary__expense-title">SUM EXPENSES</span>
+                    <span class="budget-summary__expense-amount">- 56,000.00</span>
                 </div>
             </div>
         </div>
@@ -32,8 +32,8 @@
     <section class="banner">
         <div class="container">
             <div class="budget-entry">
-                <div class="budget-entry__income"><a href="#">Add Income</a></div>
-                <div class="budget-entry__expense"><a href="#">Add Expenses</a></div>
+                <div class="budget-entry__income"><a href="#pop-up__box">Add Income</a></div>
+                <div class="budget-entry__expense"><a href="#pop-up__box">Add Expenses</a></div>
 
             </div>
         </div>
@@ -43,27 +43,27 @@
         <div class="container">
             <div class="budget-wrapper">
                 <ul class="budget__income-list">
-                    <h2 class="heading-secondary">INCOME</h2>
+                    <h3 class="heading-tertiary">INCOME</h3>
                     <li><span class="budget__income-title">Income topic here</span>
-                        <span class="budget__income-amount"> +50254</span>
+                        <span class="budget__income-amount"> + 50,254.00</span>
                     </li>
                     <li><span class="budget__income-title">Income topic here</span>
-                        <span class="budget__income-amount"> +50254</span>
+                        <span class="budget__income-amount"> + 50,254.00</span>
                     </li>
                     <li><span class="budget__income-title">Income topic here</span>
-                        <span class="budget__income-amount"> +50254</span>
+                        <span class="budget__income-amount"> + 50,254.00</span>
                     </li>
                 </ul>
-                <ul class="budget__expenses-list">
-                    <h2 class="heading-secondary">Expenses</h2>
+                <ul class="budget__expense-list">
+                    <h3 class="heading-tertiary">Expenses</h3>
                     <li><span class="budget__expense-title">Income topic here</span>
-                        <span class="budget__expense-amount"> +50254</span>
+                        <span class="budget__expense-amount"> + 50,254.00</span>
                     </li>
                     <li><span class="budget__expense-title">Income topic here</span>
-                        <span class="budget__expense-amount"> +50254</span>
+                        <span class="budget__expense-amount"> + 50,254.00</span>
                     </li>
                     <li><span class="budget__expense-title">Income topic here</span>
-                        <span class="budget__expense-amount"> +50254</span>
+                        <span class="budget__expense-amount"> + 50,254.00</span>
                     </li>
                 </ul>
             </div>
@@ -71,24 +71,25 @@
     </section>
 
     <div id="pop-up__box">
-        <div class="income__entry">
-            <h2>INCOME</h2>
+        <!-- <div class="income__entry">
+            <h2 class="heading-tertiary">ADD INCOME</h2>
             <form id="income__entry-form">
-                <label for="budget_title">Enter income title:</label>
-                <input type="text" id="budget_title" value="">
+                <label for="budget_title">Enter Income title:</label>
+                <input type="text" id="budget_title" name="budget_title" value="">
                 <label for="budget_amount">Enter amount</label>
                 <input type="text" id="budget_amount" value="">
-                <button type="submit" form="income__entry-form">SUBMIT</button>
+                <button type="submit" class="btn btn_submit-income" form="income__entry-form">ADD INCOME</button>
             </form>
-        </div>
+        </div> -->
         <div class="expense__entry">
-            <h2>INCOME</h2>
+            <a href="#pop-up__box" class="cancel-entry">X</a>
+            <h2 class="heading-tertiary">ADD EXPENSES</h2>
             <form id="expense__entry-form">
-                <label for="budget_title">Enter income title:</label>
-                <input type="text" id="budget_title" value="">
+                <label for="budget_title">Enter Expense title:</label>
+                <input type="text" id="budget_title" name="budget_title" value="">
                 <label for="budget_amount">Enter amount</label>
                 <input type="text" id="budget_amount" value="">
-                <button type="submit" form="expense__entry-form">SUBMIT</button>
+                <button type="submit" class="btn btn_submit-expense" form="expense__entry-form">ADD EXPENSE</button>
             </form>
         </div>
     </div>

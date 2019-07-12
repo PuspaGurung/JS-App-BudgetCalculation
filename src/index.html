@@ -32,8 +32,8 @@
     <section class="banner">
         <div class="container">
             <div class="budget-entry">
-                <div class="budget-entry__income"><a href="#">Add Income</a></div>
-                <div class="budget-entry__expense"><a href="#">Add Expenses</a></div>
+                <div class="budget-entry__income"><a href="#pop-up__box">Add Income</a></div>
+                <div class="budget-entry__expense"><a href="#pop-up__box">Add Expenses</a></div>
 
             </div>
         </div>
@@ -71,24 +71,25 @@
     </section>
 
     <div id="pop-up__box">
-        <div class="income__entry">
-            <h2>INCOME</h2>
+        <!-- <div class="income__entry">
+            <h2 class="heading-tertiary">ADD INCOME</h2>
             <form id="income__entry-form">
-                <label for="budget_title">Enter income title:</label>
-                <input type="text" id="budget_title" value="">
+                <label for="budget_title">Enter Income title:</label>
+                <input type="text" id="budget_title" name="budget_title" value="">
                 <label for="budget_amount">Enter amount</label>
                 <input type="text" id="budget_amount" value="">
-                <button type="submit" form="income__entry-form">SUBMIT</button>
+                <button type="submit" class="btn btn_submit-income" form="income__entry-form">ADD INCOME</button>
             </form>
-        </div>
+        </div> -->
         <div class="expense__entry">
-            <h2>INCOME</h2>
+            <a href="#pop-up__box" class="cancel-entry">X</a>
+            <h2 class="heading-tertiary">ADD EXPENSES</h2>
             <form id="expense__entry-form">
-                <label for="budget_title">Enter income title:</label>
-                <input type="text" id="budget_title" value="">
+                <label for="budget_title">Enter Expense title:</label>
+                <input type="text" id="budget_title" name="budget_title" value="">
                 <label for="budget_amount">Enter amount</label>
                 <input type="text" id="budget_amount" value="">
-                <button type="submit" form="expense__entry-form">SUBMIT</button>
+                <button type="submit" class="btn btn_submit-expense" form="expense__entry-form">ADD EXPENSE</button>
             </form>
         </div>
     </div>
