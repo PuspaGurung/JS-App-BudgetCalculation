@@ -16,6 +16,11 @@
     -o-transform: translateY(-50%);
 }
 
+@mixin transition-delay-sm {
+    transition-delay: 0.02s;
+    
+}
+
 //BOX SHADOW
 @mixin  box-shadow-sm {
 box-shadow: 0 0 0.2rem $color-grey-dark;

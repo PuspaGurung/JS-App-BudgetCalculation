@@ -1,0 +1,45 @@
+.main-body{
+    padding: 4rem 0;
+    overflow:hidden;
+    .budget-wrapper{
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .budget__income-list,
+    .budget__expense-list{
+        width: 50%;
+        li{
+            width: 95%;
+            background: $color_grey-light;
+            border-bottom: 1px solid $color_grey-dark;
+            padding: 1rem 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .heading-tertiary{
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+        }
+    }
+    .budget__income-list{
+        .heading-tertiary{
+            color: $color_navy-blue;
+        }
+        li{}
+        .budget__income-title{}
+        .budget__income-amount{
+            color: $color_navy-blue;
+        }
+    }
+    .budget__expense-list{
+        .heading-tertiary{
+            color: $color_red-light;
+        }
+        .budget__expense-title{}
+        .budget__expense-amount{
+            color: $color_red-light;
+        }
+    }
+}

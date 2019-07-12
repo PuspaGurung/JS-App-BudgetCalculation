@@ -1,0 +1,47 @@
+.banner{
+    background-color: $color_yellow;
+    padding: 4rem 0;
+    .budget-entry{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__income,
+        &__expense{
+            margin: 0 1rem;
+            width: 20rem;
+            color: $color_grey-dark;
+            text-align:center;  
+            text-transform: uppercase;
+            @include transition-delay-sm;
+
+            &:hover{
+                color: $color_grey-light;
+                
+            }
+            a{
+                display: block;
+                padding: 1rem 1.5rem;
+            }
+            
+        }
+
+
+        &__income{
+            color: $color_navy-blue;
+            border: 1px solid $color_navy-blue;
+            &:hover{
+                background-color: $color_navy-blue;
+                
+            }
+        }
+        &__expense{
+            color: $color_red-light;
+            border: 1px solid $color_red-light;
+            &:hover{
+                background: $color_red-light;
+                
+            }
+        }
+    }
+}

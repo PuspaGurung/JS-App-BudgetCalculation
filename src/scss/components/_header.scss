@@ -1,4 +1,46 @@
-h1{
-    font-size: 100px;
-    color: #000;
+.top-header{
+    background-color: $color_white;
+    width: 100%;
+    padding: 6rem 0;
+    .budget-summary{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        
+        &__income,
+        &__expense{
+            width: 25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.7rem 1.5rem;
+            
+           
+        }
+        &__income{
+            color: $color_white;
+            background: $color_navy-blue;
+            &-title{}
+            &-amount{}
+        }
+        &__expense{
+            color: $color-white;
+            background-color: $color_red-light;
+            &-title{}
+            &-amount{}
+        }
+        .available-budget{
+            text-align: center;
+            &__title{
+                font-size: 1.6rem;
+                margin-bottom: 1rem;
+            }
+            &__amount{
+                font-size: 2.2rem;
+                font-weight: normal;
+                
+            }
+        }
+
+    }
 }

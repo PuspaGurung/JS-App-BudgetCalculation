@@ -28,6 +28,8 @@ body {
   box-sizing: border-box;
  font-family: 'Open Sans', sans-serif;
   line-height: 2rem;
+  font-size: 1.4rem;
+  color: $color_grey-dark;
 
   font-size: $default-font-size;
 }
@@ -44,6 +46,8 @@ body {
 a,ul,li{
   list-style: none;
   outline: none;
+  text-decoration: none;
+  color: inherit;
 }
 
 ::selection{
@@ -55,10 +59,3 @@ a,ul,li{
   margin: 0 auto;
 }
 
-.div-content{
-min-height: 20rem;
-min-width: 10rem;
-padding: 3rem;
-border: 1px solid #000;
-cursor: Pointer;
-}
