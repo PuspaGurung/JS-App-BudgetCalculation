@@ -1,47 +1,84 @@
 .banner{
-    background-color: $color_yellow;
-    padding: 4rem 0;
+    background-color: $color_navy-blue;
+    padding: 2rem 0;
     .budget-entry{
+        width: 64%;
+        margin: 0 auto;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
 
-        &__income,
-        &__expense{
-            margin: 0 1rem;
-            width: 20rem;
+        &__options,
+        &__description,
+        &__value{
+            height: 3.5rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            outline: none;
+            font-size: 1.4rem;
             color: $color_grey-dark;
-            text-align:center;  
-            text-transform: uppercase;
+            @include border-radius-sm;
+            border: 1px solid $color_grey-dark;
+        }
+        &__button{}
+
+
+        &__options{}
+        &__description{
+        width: 30rem;
+        }
+        &__value{
+            width: 10rem;
+        }
+        &__button{
+            color: $color_white;
+            padding: 0.5rem;
+            border: 1px solid $color_white;
+            @include border-radius-50percent;
+            cursor: pointer;
             @include transition-delay-sm;
 
             &:hover{
-                color: $color_grey-light;
+                opacity: 0.7;
+            }
+        }
+
+        // &__income,
+        // &__expense{
+        //     margin: 0 1rem;
+        //     width: 20rem;
+        //     color: $color_grey-dark;
+        //     text-align:center;  
+        //     text-transform: uppercase;
+        //     @include transition-delay-sm;
+
+        //     &:hover{
+        //         color: $color_grey-light;
                 
-            }
-            a{
-                display: block;
-                padding: 1rem 1.5rem;
-            }
+        //     }
+        //     a{
+        //         display: block;
+        //         padding: 1rem 1.5rem;
+        //     }
             
-        }
+        // }
 
 
-        &__income{
-            color: $color_navy-blue;
-            border: 1px solid $color_navy-blue;
-            &:hover{
-                background-color: $color_navy-blue;
+        // &__income{
+        //     color: $color_navy-blue;
+        //     border: 1px solid $color_navy-blue;
+        //     &:hover{
+        //         background-color: $color_navy-blue;
                 
-            }
-        }
-        &__expense{
-            color: $color_red-light;
-            border: 1px solid $color_red-light;
-            &:hover{
-                background: $color_red-light;
+        //     }
+        // }
+        // &__expense{
+        //     color: $color_red-light;
+        //     border: 1px solid $color_red-light;
+        //     &:hover{
+        //         background: $color_red-light;
                 
-            }
-        }
+        //     }
+        // }
     }
 }

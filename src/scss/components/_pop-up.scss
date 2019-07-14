@@ -43,6 +43,7 @@
 
     .income__entry,
     .expense__entry{
+        display: none;
         width: 40%;
         background: $color_white;
         padding: 3rem;
