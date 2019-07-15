@@ -5,13 +5,19 @@
     .budget-wrapper{
         display: flex;
         justify-content: space-between;
-
+        @include respond-mediaQuery(tab-port){
+            display: block;
+        }
     }
     
     .budget__income-list,
     .budget__expense-list{
         color: $color_grey-dark;
         width: 50%;
+        @include respond-mediaQuery(tab-port){
+            width: 100%;
+            
+        }
         li.budget__list{
             width: 95%;
             position: relative;
@@ -19,7 +25,10 @@
             padding: 1rem 1rem;
             display: flex;
             justify-content: space-between;
-
+            @include respond-mediaQuery(tab-port){
+                width: 100%;
+                
+            }
            
             &:nth-child(odd){
                 background: $color_grey-light;
@@ -62,6 +71,11 @@
     }
 
     .budget__income-list{
+        @include respond-mediaQuery(tab-port){
+            margin-bottom: 3rem;
+            border-bottom: 1px dashed $color_navy-blue;
+            padding-bottom: 3rem;
+        }
         .del_icon {
             color: $color_grey-dark;
             @include transition-delay-sm;

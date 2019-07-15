@@ -51,11 +51,14 @@ a,ul,li{
 }
 
 ::selection{
- 
+ background: $color_navy-blue;
   color: $color_white;
 }
 .container{
   max-width: 100rem;
   margin: 0 auto;
+  @include respond-mediaQuery(tab-port){
+    padding: 2rem;
+  }
 }
 

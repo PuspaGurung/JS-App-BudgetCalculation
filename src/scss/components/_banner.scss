@@ -7,7 +7,9 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-
+        @include respond-mediaQuery(tab-port){
+            display: block;
+        }
         &__options,
         &__description,
         &__value{
@@ -19,8 +21,22 @@
             color: $color_grey-dark;
             @include border-radius-sm;
             border: 1px solid $color_grey-dark;
+
+            @include respond-mediaQuery(tab-port){
+                margin: 0 auto 1rem;
+                display: block;
+                width: 80% !important;
+               
+            }
         }
-        &__button{}
+        &__button{
+            @include respond-mediaQuery(tab-port){
+                margin: 0 auto 1rem;
+                display: block;
+               
+            }
+
+        }
 
 
         &__options{}
@@ -29,6 +45,9 @@
         }
         &__value{
             width: 10rem;
+            @include respond-mediaQuery(tab-port){
+                margin-bottom: 3rem;
+            }
         }
         &__button{
             color: $color_white;
