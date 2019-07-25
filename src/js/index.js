@@ -1,12 +1,15 @@
 import '../scss/style.scss';
+import DOMcontrol from './components/DOMcontrol';
+import UIcontrol from './components/UIcontrol';
+import budgetControl from './components/budgetControl';
 
-document.querySelector('.cancel-entry').addEventListener('click', function () {
-    let dd = document.querySelector('#pop-up__box');
-    dd.style.visibility = 'hidden';
-});
 
-function addIncome() {
-    console.log('hi');
-}
 
-addIncome();
+
+
+//WHOLE SYSTEM CONTROLLER
+let systemControl = ((budgetCTRL, uiCTRL) => {
+
+
+})(budgetControl, UIcontrol);
+

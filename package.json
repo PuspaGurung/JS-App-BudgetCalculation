@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PuspaGurung/JavaScriptES6-OnlineShopping-InProgress.git"
+    "url": "git+https://github.com/PuspaGurung/JavaScriptES6-MyBudget-InProgress"
   },
   "author": "Puspa",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/PuspaGurung/JavaScriptES6-OnlineShopping-InProgress/issues"
+    "url": "https://github.com/PuspaGurung/JavaScriptES6-MyBudget-InProgress"
   },
-  "homepage": "https://github.com/PuspaGurung/JavaScriptES6-OnlineShopping-InProgress#readme",
+  "homepage": "https://github.com/PuspaGurung/JavaScriptES6-MyBudget-InProgress",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",

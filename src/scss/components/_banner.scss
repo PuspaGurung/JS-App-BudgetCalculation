@@ -10,7 +10,7 @@
         @include respond-mediaQuery(tab-port){
             display: block;
         }
-        &__options,
+        &__type,
         &__description,
         &__value{
             height: 3.5rem;
@@ -39,7 +39,7 @@
         }
 
 
-        &__options{}
+        &__type{}
         &__description{
         width: 30rem;
         }
