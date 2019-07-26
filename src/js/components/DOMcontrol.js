@@ -9,7 +9,7 @@ let DOMcontrol = {
 
     inputType: document.querySelector('.budget-entry__type'),
     inputDescription: document.querySelector('.budget-entry__description'),
-    inputAmount: document.querySelector('.budget-entry__value'),
+    inputValue: document.querySelector('.budget-entry__value'),
     addButton: document.querySelector('.budget-entry__button'),
 
     incomeListContainer: document.querySelector('.budget__income-list'),
