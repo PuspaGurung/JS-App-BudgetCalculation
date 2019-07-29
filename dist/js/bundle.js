@@ -3598,6 +3598,42 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 
 /***/ }),
 
+/***/ "./src/js/components/DOMcontrol.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/DOMcontrol.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nvar DOMcontrol = {\n  container: document.querySelector('.container'),\n  budgetMonth: document.querySelector('.available-budget__title-month'),\n  availableBudget: document.querySelector('.available-budget__amount'),\n  totalIncome: document.querySelector('.budget-summary__income-amount'),\n  totalExpense: document.querySelector('.budget-summary__expense-amount'),\n  totalExpensePercentage: document.querySelector('.budget-summary__expense-percentage'),\n  inputType: document.querySelector('.budget-entry__type'),\n  inputDescription: document.querySelector('.budget-entry__description'),\n  inputValue: document.querySelector('.budget-entry__value'),\n  addButton: document.querySelector('.budget-entry__button'),\n  incomeListContainer: document.querySelector('.budget__income-list'),\n  expenseListContainer: document.querySelector('.budget__expense-list'),\n  budgetListTitle: document.querySelector('.budget__list-title'),\n  budgetListAmount: document.querySelector('.budget__list-title')\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (DOMcontrol);\n\n//# sourceURL=webpack:///./src/js/components/DOMcontrol.js?");
+
+/***/ }),
+
+/***/ "./src/js/components/UIcontrol.js":
+/*!****************************************!*\
+  !*** ./src/js/components/UIcontrol.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _DOMcontrol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DOMcontrol */ \"./src/js/components/DOMcontrol.js\");\n//UI CONTROLLER\n\n\nvar UIcontrol = function () {\n  return {\n    getInput: function getInput() {\n      return {\n        inputType: _DOMcontrol__WEBPACK_IMPORTED_MODULE_0__[\"default\"].inputType.value,\n        inputDescription: _DOMcontrol__WEBPACK_IMPORTED_MODULE_0__[\"default\"].inputDescription.value,\n        inputValue: _DOMcontrol__WEBPACK_IMPORTED_MODULE_0__[\"default\"].inputValue.value\n      };\n    }\n  };\n}();\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (UIcontrol);\n\n//# sourceURL=webpack:///./src/js/components/UIcontrol.js?");
+
+/***/ }),
+
+/***/ "./src/js/components/budgetControl.js":
+/*!********************************************!*\
+  !*** ./src/js/components/budgetControl.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _DOMcontrol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DOMcontrol */ \"./src/js/components/DOMcontrol.js\");\n/* harmony import */ var _UIcontrol__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UIcontrol */ \"./src/js/components/UIcontrol.js\");\nvar _this = undefined;\n\n//BUDGET CONTROLLER\n\n\n\nvar budgetControl = function () {\n  var Expense = function Expense(id, description, value) {\n    _this.id = id;\n    _this.description = description;\n    _this.value = value;\n  };\n\n  var Income = function Income(id, description, value) {\n    _this.id = id;\n    _this.description = description;\n    _this.value = value;\n  };\n\n  var data = {\n    allItems: {\n      exp: [],\n      inc: []\n    },\n    totals: {\n      exp: 0,\n      inc: 0\n    }\n  };\n  return {\n    addItem: function addItem(type, des, val) {\n      var ID, newItem; // generate ID for new item\n\n      if (data.allItems[type].length > 0) {\n        ID = data.allItems[type][data.allItems[type].length - 1].id + 1;\n      } else {\n        ID = 0;\n      } // create new item based on 'inc' and 'exp'\n\n\n      if (type === 'expense') {\n        newItem = new Expense(ID, des, val);\n      } else if (type === 'income') {\n        newItem = new Income(ID, des, val);\n      } // Push new item to array\n\n\n      data.allItems[type].push(newItem); // return \n\n      return newItem;\n    },\n    testing: function testing() {\n      console.log(data);\n    }\n  };\n}();\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (budgetControl);\n\n//# sourceURL=webpack:///./src/js/components/budgetControl.js?");
+
+/***/ }),
+
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -3606,7 +3642,7 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/style.scss */ \"./src/scss/style.scss\");\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n\nvar DOMcontrol = {\n  container: document.querySelector('.container'),\n  budgetMonth: document.querySelector('.available-budget__title-month'),\n  availableBudget: document.querySelector('.available-budget__amount'),\n  totalIncome: document.querySelector('.budget-summary__income-amount'),\n  totalExpense: document.querySelector('.budget-summary__expense-amount'),\n  totalExpensePercentage: document.querySelector('.budget-summary__expense-percentage'),\n  inputType: document.querySelector('.budget-entry__type'),\n  inputDescription: document.querySelector('.budget-entry__description'),\n  inputAmount: document.querySelector('.budget-entry__value'),\n  addButton: document.querySelector('.budget-entry__button'),\n  incomeListContainer: document.querySelector('.budget__income-list'),\n  expenseListContainer: document.querySelector('.budget__expense-list'),\n  budgetListTitle: document.querySelector('.budget__list-title'),\n  budgetListAmount: document.querySelector('.budget__list-title') //BUDGET CONTROLLER\n\n};\n\nvar budgetController = function () {\n  var x = 25;\n\n  var add = function add(a) {\n    return a + x;\n  };\n\n  return {\n    publictest: function publictest(b) {\n      return add(b);\n    }\n  };\n}(); //UI CONTROLLER\n\n\nvar UIcontroller = function () {\n  return {\n    hh: function hh(a) {\n      console.log(a);\n    }\n  };\n}(); //WHOLE SYSTEM CONTROLLER\n\n\nvar systemController = function (budgetCTRL, uiCTRL) {\n  var sum = budgetCTRL.publictest(7);\n  return {\n    anotherglobalfile: function anotherglobalfile() {\n      console.log(sum);\n    }\n  };\n}(budgetController, UIcontroller);\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/style.scss */ \"./src/scss/style.scss\");\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components_DOMcontrol__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/DOMcontrol */ \"./src/js/components/DOMcontrol.js\");\n/* harmony import */ var _components_UIcontrol__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/UIcontrol */ \"./src/js/components/UIcontrol.js\");\n/* harmony import */ var _components_budgetControl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/budgetControl */ \"./src/js/components/budgetControl.js\");\n\n\n\n //WHOLE APPLICATION CONTROLLER\n\nvar systemControl = function (budgetCTRL, uiCTRL) {\n  // CONTROL ADD ITEMS\n  var addItemControl = function addItemControl() {\n    var input, newItem; // 1. Get the filed input data\n\n    input = _components_UIcontrol__WEBPACK_IMPORTED_MODULE_2__[\"default\"].getInput();\n    console.log(input.inputType); // 2. Add the item to the budget controller\n\n    newItem = budgetCTRL.addItem(input.inputType, input.inputDescription, input.inputValue); // 3. Add the item to User interface\n    // 4. Calculate the budget\n    // 5. Display the items in the User Interface\n  }; // CONTROL EVENT LISTENER (MOUSE CLICK, PRESS ENTER KEY)\n\n\n  var eventListenerCTRL = function eventListenerCTRL() {\n    // Mouse click\n    _components_DOMcontrol__WEBPACK_IMPORTED_MODULE_1__[\"default\"].addButton.addEventListener('click', addItemControl); // Press Enter key\n\n    document.addEventListener('keypress', function (e) {\n      var enterKeycode = 13; // default keycode of Enter key\n\n      if (e.keyCode === enterKeycode || e.which === enterKeycode) {\n        // do the same function as like click addButton \n        addItemControl();\n      }\n    });\n  };\n\n  return {\n    initialization: function initialization() {\n      console.log('the application started');\n      eventListenerCTRL();\n    }\n  };\n}(_components_budgetControl__WEBPACK_IMPORTED_MODULE_3__[\"default\"], _components_UIcontrol__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n\nsystemControl.initialization();\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 
