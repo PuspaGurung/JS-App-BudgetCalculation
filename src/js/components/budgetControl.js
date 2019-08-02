@@ -59,7 +59,6 @@ let budgetControl = (() => {
             console.log(data);
         }
     };
-
 })();
 
 export default budgetControl;

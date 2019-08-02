@@ -6,7 +6,7 @@ let UIcontrol = (() => {
             return {
                 inputType: DOMcontrol.inputType.value,
                 inputDescription: DOMcontrol.inputDescription.value,
-                inputValue: DOMcontrol.inputValue.value
+                inputValue: parseFloat(DOMcontrol.inputValue.value)
             };
         },
         addItemList: (obj, type) => {
@@ -48,11 +48,14 @@ let UIcontrol = (() => {
         clearInputFields: () => {
             let fields, fieldArray;
             fields = DOMcontrol.allInputFields;
+            console.log(fields);
             fieldArray = Array.prototype.slice.call(fields);
+            console.log(fieldArray);
             fieldArray.forEach((curVlue, index, array) => {
                 curVlue.value = "";
 
             });
+            fieldArray[0].focus();
         }
     }
 

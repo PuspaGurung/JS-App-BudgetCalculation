@@ -2,6 +2,7 @@ import '../scss/style.scss';
 import DOMcontrol from './components/DOMcontrol';
 import UIcontrol from './components/UIcontrol';
 import budgetControl from './components/budgetControl';
+import updateBudget from './components/updateBudget';
 
 
 
@@ -24,9 +25,13 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
 
         // 3. Add the item to User interface
         UIcontrol.addItemList(newItem, input.inputType);
+
         // 4. Clear the fields
         UIcontrol.clearInputFields();
-        // 5. Calculate the budget
+
+        // 5. Calculate and update the budget
+        updateBudget();
+
         // 6. Display the items in the User Interface
     };
 
