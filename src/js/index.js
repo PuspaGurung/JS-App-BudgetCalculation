@@ -10,7 +10,6 @@ import budgetControl from './components/budgetControl';
 //WHOLE APPLICATION CONTROLLER
 let systemControl = ((budgetCTRL, uiCTRL) => {
 
-
     // CONTROL ADD ITEMS
     let addItemControl = () => {
         let input, newItem;
@@ -21,6 +20,7 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
 
         // 2. Add the item to the budget controller
         newItem = budgetCTRL.addItem(input.inputType, input.inputDescription, input.inputValue);
+
 
         // 3. Add the item to User interface
         // 4. Calculate the budget
