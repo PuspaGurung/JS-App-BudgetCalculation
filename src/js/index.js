@@ -21,8 +21,9 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
         // 2. Add the item to the budget controller
         newItem = budgetCTRL.addItem(input.inputType, input.inputDescription, input.inputValue);
 
-
+        console.log(newItem);
         // 3. Add the item to User interface
+        UIcontrol.addItemList(newItem, input.inputType);
         // 4. Calculate the budget
         // 5. Display the items in the User Interface
     };
