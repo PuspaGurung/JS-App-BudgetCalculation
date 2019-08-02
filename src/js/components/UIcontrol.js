@@ -44,6 +44,15 @@ let UIcontrol = (() => {
             // Insert the HTML into the DOM
             listContainer.insertAdjacentHTML('beforeend', newHtmlElement);
 
+        },
+        clearInputFields: () => {
+            let fields, fieldArray;
+            fields = DOMcontrol.allInputFields;
+            fieldArray = Array.prototype.slice.call(fields);
+            fieldArray.forEach((curVlue, index, array) => {
+                curVlue.value = "";
+
+            });
         }
     }
 

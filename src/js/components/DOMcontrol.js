@@ -12,6 +12,12 @@ let DOMcontrol = {
     inputValue: document.querySelector('.budget-entry__value'),
     addButton: document.querySelector('.budget-entry__button'),
 
+    // All input fields :: use for the purpose of clear the fields
+    allInputFields: document.querySelectorAll(`.budget-entry__description, .budget-entry__value`),
+
+
+
+
     incomeListContainer: document.querySelector('.budget__income-list'),
     expenseListContainer: document.querySelector('.budget__expense-list'),
 
@@ -20,5 +26,5 @@ let DOMcontrol = {
     budgetListTitle: document.querySelector('.budget__list-title'),
     budgetListAmount: document.querySelector('.budget__list-title'),
 }
-
+console.log(DOMcontrol.allInputDescription);
 export default DOMcontrol;

@@ -20,12 +20,14 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
 
         // 2. Add the item to the budget controller
         newItem = budgetCTRL.addItem(input.inputType, input.inputDescription, input.inputValue);
-
         console.log(newItem);
+
         // 3. Add the item to User interface
         UIcontrol.addItemList(newItem, input.inputType);
-        // 4. Calculate the budget
-        // 5. Display the items in the User Interface
+        // 4. Clear the fields
+        UIcontrol.clearInputFields();
+        // 5. Calculate the budget
+        // 6. Display the items in the User Interface
     };
 
     // CONTROL EVENT LISTENER (MOUSE CLICK, PRESS ENTER KEY)
