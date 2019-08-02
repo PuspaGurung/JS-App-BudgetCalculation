@@ -18,21 +18,23 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
         // 1. Get the filed input data
         input = UIcontrol.getInput();
         console.log(input.inputType);
+        if (input.inputDescription !== "" && !isNaN(input.inputValue) && input.inputValue > 0) {
 
-        // 2. Add the item to the budget controller
-        newItem = budgetCTRL.addItem(input.inputType, input.inputDescription, input.inputValue);
-        console.log(newItem);
+            // 2. Add the item to the budget controller
+            newItem = budgetCTRL.addItem(input.inputType, input.inputDescription, input.inputValue);
+            console.log(newItem);
 
-        // 3. Add the item to User interface
-        UIcontrol.addItemList(newItem, input.inputType);
+            // 3. Add the item to User interface
+            UIcontrol.addItemList(newItem, input.inputType);
 
-        // 4. Clear the fields
-        UIcontrol.clearInputFields();
+            // 4. Clear the fields
+            UIcontrol.clearInputFields();
 
-        // 5. Calculate and update the budget
-        updateBudget();
+            // 5. Calculate and update the budget
+            updateBudget();
 
-        // 6. Display the items in the User Interface
+            // 6. Display the items in the User Interface
+        }
     };
 
     // CONTROL EVENT LISTENER (MOUSE CLICK, PRESS ENTER KEY)

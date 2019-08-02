@@ -42,6 +42,8 @@ let UIcontrol = (() => {
             newHtmlElement = newHtmlElement.replace(`%amount%`, obj.value);
 
             // Insert the HTML into the DOM
+
+
             listContainer.insertAdjacentHTML('beforeend', newHtmlElement);
 
         },
