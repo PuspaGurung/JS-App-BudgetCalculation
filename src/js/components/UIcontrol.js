@@ -50,14 +50,30 @@ let UIcontrol = (() => {
         clearInputFields: () => {
             let fields, fieldArray;
             fields = DOMcontrol.allInputFields;
-            console.log(fields);
+
             fieldArray = Array.prototype.slice.call(fields);
-            console.log(fieldArray);
+
             fieldArray.forEach((curVlue, index, array) => {
                 curVlue.value = "";
 
             });
             fieldArray[0].focus();
+        },
+        displayBudget: (obj) => {
+
+            DOMcontrol.availableBudget.textContent = obj.budget;
+
+            DOMcontrol.totalIncome.textContent = obj.totIncome;
+            DOMcontrol.totalExpense.textContent = obj.totExpense;
+
+
+            if (obj.percentage > 0) {
+                DOMcontrol.totalExpensePercentage.textContent = obj.percentage + '%';
+            }
+            else {
+                DOMcontrol.totalExpensePercentage.textContent = '--';
+            }
+
         }
     }
 

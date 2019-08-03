@@ -3,6 +3,7 @@ let DOMcontrol = {
 
     budgetMonth: document.querySelector('.available-budget__title-month'),
     availableBudget: document.querySelector('.available-budget__amount'),
+
     totalIncome: document.querySelector('.budget-summary__income-amount'),
     totalExpense: document.querySelector('.budget-summary__expense-amount'),
     totalExpensePercentage: document.querySelector('.budget-summary__expense-percentage'),
