@@ -125,6 +125,15 @@ let UIcontrol = (() => {
                 }
             });
 
+        },
+        displayDate: () => {
+            let monthList, curDate, curYear, curMonth;
+            monthList = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+            curDate = new Date();
+            curMonth = monthList[curDate.getMonth()];
+            curYear = curDate.getFullYear();
+            DOMcontrol.budgetMonth.textContent = `${curMonth}, ${curYear}`;
         }
     }
 

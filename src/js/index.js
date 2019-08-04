@@ -121,6 +121,7 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
                 totExpense: -1
             });
 
+            UIcontrol.displayDate();
         }
     }
 
