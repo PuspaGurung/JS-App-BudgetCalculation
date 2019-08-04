@@ -27,6 +27,11 @@ let DOMcontrol = {
     budgetListTitle: document.querySelector('.budget__list-title'),
     budgetListAmount: document.querySelector('.budget__list-title'),
 
+    // Expense percentage list
+    expensePercentageLabel: '.budget__list-percentage',
+
+
+
     // Items list
     listWrapper: document.querySelector('.budget-wrapper'),
 
@@ -35,3 +40,4 @@ let DOMcontrol = {
 }
 
 export default DOMcontrol;
+console.log(DOMcontrol.inputDescription);

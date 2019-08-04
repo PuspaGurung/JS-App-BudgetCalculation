@@ -32,7 +32,9 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
             // 5. Calculate and update the budget
             updateBudget();
 
-            // 6. Display the items in the User Interface
+            // 6. Update the percentages
+
+            updatePercentage();
 
         }
     };
@@ -59,6 +61,9 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
 
             // 3. Update and show the budget
             updateBudget();
+
+            // 4. Update percentage
+            updatePercentage();
         }
 
     };
@@ -71,6 +76,21 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
         let budget = budgetCTRL.getBudget();
         // 3. Display the budget in UI
         UIcontrol.displayBudget(budget);
+    };
+
+    // UPDATE THE PERCENTAGE
+    let updatePercentage = () => {
+        // 1. calculate the percentages
+        budgetControl.calcualtePercentage();
+
+
+        // 2 . Read the percentage from the budget control
+        let percentages = budgetControl.getPercentages();
+
+        // 3. Show update percentage in the User Interface
+        console.log(percentages);
+
+        UIcontrol.displayPercentages(percentages);
     };
 
 

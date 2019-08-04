@@ -7,7 +7,21 @@ let budgetControl = (() => {
         this.id = id;
         this.description = description;
         this.value = value;
+        this.percentage = -1;
     };
+
+    Expense.prototype.calPercentage = function (totalIncome) {
+        if (totalIncome > 0) {
+            this.percentage = Math.round((this.value / totalIncome) * 100);
+        }
+        else {
+            this.percentage = -1;
+        }
+    };
+    Expense.prototype.getPercentage = function () {
+        return this.percentage;
+    };
+
 
     let Income = function (id, description, value) {
         this.id = id;
@@ -83,6 +97,23 @@ let budgetControl = (() => {
             }
 
         },
+
+        // CALCULATE PERCENTAGE
+        calcualtePercentage: () => {
+            data.allItems.expense.forEach((cur) => {
+                cur.calPercentage(data.totals.income);
+            });
+
+        },
+
+        getPercentages: () => {
+            let allPercentage = data.allItems.expense.map((cur) => {
+                return cur.getPercentage();
+            });
+            return allPercentage;
+
+        },
+
         getBudget: () => {
             return {
                 budget: data.budget,
@@ -104,6 +135,7 @@ let budgetControl = (() => {
             }
 
         },
+
 
         testing: () => {
             console.log(data.allItems);

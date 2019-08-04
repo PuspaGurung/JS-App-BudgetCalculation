@@ -81,6 +81,28 @@ let UIcontrol = (() => {
                 DOMcontrol.totalExpensePercentage.textContent = '--';
             }
 
+        },
+        displayPercentages: (percentages) => {
+            let perElement, nodeListForEach;
+            perElement = document.querySelectorAll(DOMcontrol.expensePercentageLabel);
+            console.log(perElement);
+
+            DOMcontrol.expensePercentageLabel;
+            nodeListForEach = function (list, callback) {
+                for (let i = 0; i < list.length; i++) {
+                    callback(list[i], i);
+                }
+
+            };
+            nodeListForEach(perElement, function (cur, index) {
+                if (percentages[index] > 0) {
+                    cur.textContent = percentages[index] + '%';
+                }
+                else {
+                    cur.textContent = '--';
+                }
+            });
+
         }
     }
 
