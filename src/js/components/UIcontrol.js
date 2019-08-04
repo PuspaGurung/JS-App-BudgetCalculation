@@ -4,7 +4,7 @@ import { sign } from 'crypto';
 let UIcontrol = (() => {
 
     let formatNumber = (num, type) => {
-        let numSplit, numInt, numDec;
+        let numSplit, numInt, numDec, sign;
         num = Math.abs(num);
         num = num.toFixed(2);
 
@@ -16,8 +16,8 @@ let UIcontrol = (() => {
             numInt = `${numInt.substr(0, numInt.length - 3)}, ${numInt.substr(numInt.length - 3, 3)}`;
         }
         numDec = numSplit[1];
-
-        return (type === 'expense' ? '-' : '+') + ' ' + numInt + '.' + numDec;
+        type === 'expense' ? sign = '-' : sign = '+';
+        return `${sign}  ${numInt}.${numDec}`;
     };
 
     return {
