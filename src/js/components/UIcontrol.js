@@ -26,8 +26,8 @@ let UIcontrol = (() => {
             else if (type === "expense") {
                 listContainer = DOMcontrol.expenseListContainer;
                 htmlElement = ` 
-                <li class="budget__list">
-                    <span class="budget__list-title" id = "expense-%id%">%description%</span>
+                <li class="budget__list" id = "expense-%id%">
+                    <span class="budget__list-title" >%description%</span>
                     <span class="expense__amount-wrapper">
                         <span class="budget__list-amount"> %amount%</span>
                         <span class="budget__list-percentage"> 25%</span>
@@ -46,6 +46,14 @@ let UIcontrol = (() => {
 
             listContainer.insertAdjacentHTML('beforeend', newHtmlElement);
 
+
+        },
+
+        // DELETE ITEM
+        deleteList: (selectedID) => {
+            let element = document.getElementById(selectedID);
+            element.parentNode.removeChild(element);
+
         },
         clearInputFields: () => {
             let fields, fieldArray;
@@ -62,7 +70,6 @@ let UIcontrol = (() => {
         displayBudget: (obj) => {
 
             DOMcontrol.availableBudget.textContent = obj.budget;
-
             DOMcontrol.totalIncome.textContent = obj.totIncome;
             DOMcontrol.totalExpense.textContent = obj.totExpense;
 

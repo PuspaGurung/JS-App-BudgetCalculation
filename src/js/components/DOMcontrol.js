@@ -26,6 +26,12 @@ let DOMcontrol = {
 
     budgetListTitle: document.querySelector('.budget__list-title'),
     budgetListAmount: document.querySelector('.budget__list-title'),
+
+    // Items list
+    listWrapper: document.querySelector('.budget-wrapper'),
+
+    // Delete button
+    deleteList: document.querySelector('.del_icon')
 }
-console.log(DOMcontrol.allInputDescription);
+
 export default DOMcontrol;

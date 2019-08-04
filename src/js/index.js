@@ -23,7 +23,6 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
             // 2. Add the item to the budget controller
             newItem = budgetCTRL.addItem(input.inputType, input.inputDescription, input.inputValue);
 
-
             // 3. Add the item to User interface
             UIcontrol.addItemList(newItem, input.inputType);
 
@@ -31,13 +30,40 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
             UIcontrol.clearInputFields();
 
             // 5. Calculate and update the budget
-
             updateBudget();
 
             // 6. Display the items in the User Interface
 
         }
     };
+
+
+    //DELETE ITEM
+    let ctrlDeleteItem = (event) => {
+        let itemID, splitID, type, ID;
+        itemID = event.target.parentNode.id;
+        console.log(itemID);
+        if (itemID) {
+            splitID = itemID.split('-');
+
+            console.log(`hello ${splitID}`);
+            type = splitID[0];
+            ID = parseInt(splitID[1]); // convert "1" to 1 :: string to number
+
+
+            // 1. Delete the item from data structure
+            budgetControl.deleteItem(type, ID);
+
+            // 2. Delete the item from UI
+            UIcontrol.deleteList(itemID);
+
+            // 3. Update and show the budget
+            updateBudget();
+        }
+
+    };
+
+    //UPDATE BUDGET
     let updateBudget = () => {
         // 1. Calculate the budget
         budgetCTRL.calculateBudget();
@@ -61,6 +87,7 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
                 addItemControl();
             }
         });
+        DOMcontrol.listWrapper.addEventListener('click', ctrlDeleteItem);
     };
 
     return {
@@ -73,6 +100,7 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
                 totIncome: 0,
                 totExpense: -1
             });
+
         }
     }
 

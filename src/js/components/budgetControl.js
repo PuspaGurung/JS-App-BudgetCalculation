@@ -64,6 +64,7 @@ let budgetControl = (() => {
             // return 
             return newItem;
         },
+
         calculateBudget: () => {
             // 1. Calculate total income and expenses
             calcualteTotal('income');
@@ -92,11 +93,25 @@ let budgetControl = (() => {
 
         },
 
+        deleteItem: (type, id) => {
+            let allID, index;
+            allID = data.allItems[type].map((cur) => {
+                return cur.id;
+            });
+            index = allID.indexOf(id);
+            if (index !== -1) {
+                data.allItems[type].splice(index, 1);
+            }
+
+        },
+
         testing: () => {
+            console.log(data.allItems);
 
         }
     };
 })();
 
 export default budgetControl;
+budgetControl.testing();
 
