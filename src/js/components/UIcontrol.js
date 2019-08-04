@@ -1,8 +1,30 @@
 //UI CONTROLLER
 import DOMcontrol from './DOMcontrol';
+import { sign } from 'crypto';
 let UIcontrol = (() => {
+
+    let formatNumber = (num, type) => {
+        let numSplit, numInt, numDec;
+        num = Math.abs(num);
+        num = num.toFixed(2);
+
+        numSplit = num.split('.');
+
+        numInt = numSplit[0];
+
+        if (numInt.length > 3) {
+            numInt = `${numInt.substr(0, numInt.length - 3)}, ${numInt.substr(numInt.length - 3, 3)}`;
+        }
+        numDec = numSplit[1];
+
+        return (type === 'expense' ? '-' : '+') + ' ' + numInt + '.' + numDec;
+    };
+
     return {
         getInput: () => {
+
+
+
             return {
                 inputType: DOMcontrol.inputType.value,
                 inputDescription: DOMcontrol.inputDescription.value,
@@ -39,7 +61,7 @@ let UIcontrol = (() => {
             //replace the Placeholder text wit actula items
             newHtmlElement = htmlElement.replace(`%id%`, obj.id)
             newHtmlElement = newHtmlElement.replace(`%description%`, obj.description);
-            newHtmlElement = newHtmlElement.replace(`%amount%`, obj.value);
+            newHtmlElement = newHtmlElement.replace(`%amount%`, formatNumber(obj.value, type));
 
             // Insert the HTML into the DOM
 
@@ -68,10 +90,11 @@ let UIcontrol = (() => {
             fieldArray[0].focus();
         },
         displayBudget: (obj) => {
-
-            DOMcontrol.availableBudget.textContent = obj.budget;
-            DOMcontrol.totalIncome.textContent = obj.totIncome;
-            DOMcontrol.totalExpense.textContent = obj.totExpense;
+            let type;
+            obj.budget > 0 ? type = 'income' : type = 'expense';
+            DOMcontrol.availableBudget.textContent = formatNumber(obj.budget, type);
+            DOMcontrol.totalIncome.textContent = formatNumber(obj.totIncome, 'income');
+            DOMcontrol.totalExpense.textContent = formatNumber(obj.totExpense, 'expense');
 
 
             if (obj.percentage > 0) {
@@ -87,7 +110,6 @@ let UIcontrol = (() => {
             perElement = document.querySelectorAll(DOMcontrol.expensePercentageLabel);
             console.log(perElement);
 
-            DOMcontrol.expensePercentageLabel;
             nodeListForEach = function (list, callback) {
                 for (let i = 0; i < list.length; i++) {
                     callback(list[i], i);
