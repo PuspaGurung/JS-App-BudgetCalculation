@@ -13,11 +13,12 @@ let DOMcontrol = {
     inputValue: document.querySelector('.budget-entry__value'),
     addButton: document.querySelector('.budget-entry__button'),
 
-    // All input fields :: use for the purpose of clear the fields
-    allInputFields: document.querySelectorAll(`.budget-entry__description, .budget-entry__value`),
 
+    // Select description and value input fields :: use for the purpose of clear the fields
+    inputFields: document.querySelectorAll(`.budget-entry__description, .budget-entry__value`),
 
-
+    // Selet type, description and value input fields :: nodeListForEach function 
+    allInputFields: document.querySelectorAll(`.budget-entry__type, .budget-entry__description, .budget-entry__value`),
 
     incomeListContainer: document.querySelector('.budget__income-list'),
     expenseListContainer: document.querySelector('.budget__expense-list'),

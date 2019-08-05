@@ -108,6 +108,8 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
             }
         });
         DOMcontrol.listWrapper.addEventListener('click', ctrlDeleteItem);
+
+        DOMcontrol.inputType.addEventListener('change', UIcontrol.changeInputFieldOutline);
     };
 
     return {

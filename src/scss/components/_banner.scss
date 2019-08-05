@@ -1,6 +1,10 @@
 .banner{
     background-color: $color_navy-blue;
     padding: 2rem 0;
+
+    .expense-focus{
+      border: 1px solid $color_red-light !important;
+}
     .budget-entry{
         width: 64%;
         margin: 0 auto;
