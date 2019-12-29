@@ -1,0 +1,148 @@
+.main-body {
+    padding: 4rem 0;
+    overflow: hidden;
+
+    .budget-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        // on screen width = phone screen width
+        @include respond-mediaQuery(phone) {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .budget__income-list,
+    .budget__expense-list {
+        color: $color_grey-dark;
+        width: 50%;
+        padding-right: 2rem;
+
+        @include respond-mediaQuery(phone) {
+            width: 100%;
+            padding-right: 0;
+        }
+
+        .budget__list {
+            width: 100%;
+            border-bottom: 1px solid $color_grey;
+            padding: 1rem;
+            position: relative;
+            z-index: 50;
+
+            @include respond-mediaQuery(phone) {
+                width: 100%;
+
+            }
+
+            &:nth-child(odd) {
+                background: $color_grey-light;
+
+                .del_icon {
+                    background: $color_grey-light;
+                }
+            }
+
+            .group-element {
+                display: flex;
+            }
+
+            .del_icon {
+                cursor: pointer;
+                background: $color_white;
+                border: 1px solid;
+                width: 2.5rem;
+                height: 2.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.4rem;
+                position: absolute;
+                right: 1rem;
+                top: 50%;
+                z-index: 100;
+                @include transform-y-minus50percent;
+                @include border-radius-50percent;
+            }
+        }
+
+        .heading-tertiary {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .budget__income-list {
+        @include respond-mediaQuery(phone) {
+            margin-bottom: 3rem;
+            border-bottom: 3px dashed $color_navy-blue;
+            padding-bottom: 3rem;
+        }
+
+        .budget__list-amount {
+            padding-right: 2.8rem;
+            float: right;
+        }
+
+        .budget__list:hover .budget__list-amount {
+            padding-right: 3.3rem;
+
+        }
+
+        .del_icon {
+            color: $color_grey-dark;
+            @include transition-delay-sm;
+
+            &:hover {
+                color: $color_red-light;
+            }
+        }
+
+        .heading-tertiary,
+        .budget__list-amount {
+            color: $color_navy-blue;
+            @include transition-delay-sm;
+        }
+    }
+
+    .budget__expense-list {
+        .budget__list-amount {
+            padding-right: 1rem;
+        }
+
+        .expense__amount-wrapper {
+            padding-right: 2.8rem;
+            float: right;
+            @include transition-delay-sm;
+        }
+
+        &:hover .expense__amount-wrapper {
+            padding-right: 3.3rem;
+        }
+
+        .del_icon {
+            opacity: 0.5;
+            color: $color_red-light;
+            @include transition-delay-sm;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .heading-tertiary,
+        .budget__list-amount {
+            color: $color_red-light;
+
+        }
+
+        .budget__list-percentage {
+            background: $color_red-light;
+            color: #fff;
+            padding: 0.3rem 0.5rem;
+            font-size: 1.2rem;
+            opacity: 0.7;
+
+        }
+    }
+}

@@ -1,9 +1,7 @@
-
 @import './components/variable';
 @import './components/mixin';
 @import './components/utilities';
 @import './components/base';
-@import './components/header';
-@import './components/banner';
-@import './components/main-body';
-@import './components/pop-up';
+@import './components/sections/header';
+@import './components/sections/banner';
+@import './components/sections/main-body';

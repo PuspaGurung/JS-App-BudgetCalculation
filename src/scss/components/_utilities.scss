@@ -1,19 +1,30 @@
-.heading-secondary{
+.container {
+    max-width: 100rem;
+    margin: 0 auto;
+
+    @include respond-mediaQuery(ipad-pro) {
+        padding: 0 2.5rem;
+    }
+}
+
+.heading-secondary {
     font-size: 2rem;
     font-weight: normal;
 }
-.heading-tertiary{
+
+.heading-tertiary {
     font-weight: normal;
     font-size: 1.6rem;
 }
 
-.btn{
+.btn {
     padding: 1rem 1.5rem;
     border: none;
     @include transition-delay-sm;
     color: $color_grey-light;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
         opacity: 0.8;
     }
 }

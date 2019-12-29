@@ -1,0 +1,76 @@
+.banner {
+    background-color: $color_navy-blue;
+    padding: 3rem 0;
+
+    .expense-focus {
+        border: 1px solid $color_red-light !important;
+    }
+
+    .budget-entry {
+        width: 64%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        // on screen width = phone screen width
+        @include respond-mediaQuery(phone) {
+            flex-direction: column;
+
+            &__type,
+            &__description,
+            &__value {
+                margin-bottom: 2rem;
+            }
+        }
+
+        &__type,
+        &__description,
+        &__value {
+            padding: 0 1rem;
+            border: none;
+            outline: none;
+            line-height: 4rem;
+            height: 4rem;
+            color: $color_grey-dark;
+            font-size: 1.6rem;
+            @include border-radius-sm;
+            border: 1px solid $color_grey-dark;
+
+            @include respond-mediaQuery(tab-port) {
+                margin: 0 auto 1rem;
+                display: block;
+                width: 80% !important;
+            }
+        }
+
+        &__type {
+            height: 4rem;
+            padding-right: 0;
+        }
+
+        &__description {
+            width: 30rem;
+        }
+
+        &__value {
+            width: 10rem;
+
+            @include respond-mediaQuery(phone) {
+                width: 20rem;
+            }
+        }
+
+        &__button {
+            color: $color_white;
+            font-size: 4rem;
+            cursor: pointer;
+            @include transition-delay-sm;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+
+    }
+}
