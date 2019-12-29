@@ -2,11 +2,6 @@ import '../scss/style.scss';
 import DOMcontrol from './components/DOMcontrol';
 import UIcontrol from './components/UIcontrol';
 import budgetControl from './components/budgetControl';
-//import updateBudget from './components/updateBudget';
-
-
-
-
 
 //WHOLE APPLICATION CONTROLLER
 let systemControl = ((budgetCTRL, uiCTRL) => {
@@ -33,25 +28,18 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
             updateBudget();
 
             // 6. Update the percentages
-
             updatePercentage();
-
         }
     };
-
 
     //DELETE ITEM
     let ctrlDeleteItem = (event) => {
         let itemID, splitID, type, ID;
         itemID = event.target.parentNode.id;
-        console.log(itemID);
         if (itemID) {
             splitID = itemID.split('-');
-
-            console.log(`hello ${splitID}`);
             type = splitID[0];
             ID = parseInt(splitID[1]); // convert "1" to 1 :: string to number
-
 
             // 1. Delete the item from data structure
             budgetControl.deleteItem(type, ID);
@@ -83,16 +71,12 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
         // 1. calculate the percentages
         budgetControl.calcualtePercentage();
 
-
         // 2 . Read the percentage from the budget control
         let percentages = budgetControl.getPercentages();
 
         // 3. Show update percentage in the User Interface
-        console.log(percentages);
-
         UIcontrol.displayPercentages(percentages);
     };
-
 
     // CONTROL EVENT LISTENER (MOUSE CLICK, PRESS ENTER KEY)
     let eventListenerCTRL = () => {
@@ -108,13 +92,11 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
             }
         });
         DOMcontrol.listWrapper.addEventListener('click', ctrlDeleteItem);
-
         DOMcontrol.inputType.addEventListener('change', UIcontrol.changeInputFieldOutline);
     };
 
     return {
         initialization: () => {
-            console.log('the application started');
             eventListenerCTRL();
             UIcontrol.displayBudget({
                 budget: 0,
@@ -126,8 +108,5 @@ let systemControl = ((budgetCTRL, uiCTRL) => {
             UIcontrol.displayDate();
         }
     }
-
-
 })(budgetControl, UIcontrol);
-
 systemControl.initialization();

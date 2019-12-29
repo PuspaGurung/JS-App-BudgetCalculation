@@ -3,6 +3,10 @@
     width: 100%;
     padding: 6rem 0 4rem;
 
+    .project-title {
+        text-align: center;
+    }
+
     .budget-summary {
         align-items: center;
 
@@ -49,6 +53,8 @@
             &__title {
                 font-size: 1.6rem;
                 margin-bottom: 2rem;
+                display: inline-block;
+                text-transform: uppercase;
             }
 
             &__amount {

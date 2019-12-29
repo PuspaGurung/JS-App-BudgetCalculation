@@ -118,7 +118,6 @@ let UIcontrol = (() => {
         displayPercentages: percentages => {
             let perElement;
             perElement = document.querySelectorAll(DOMcontrol.expensePercentageLabel);
-            console.log(perElement);
 
             // nodeListForEach = function (list, callback) {
             //     for (let i = 0; i < list.length; i++) {

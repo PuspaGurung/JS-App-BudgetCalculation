@@ -13,15 +13,13 @@ let budgetControl = (() => {
     Expense.prototype.calPercentage = function (totalIncome) {
         if (totalIncome > 0) {
             this.percentage = Math.round((this.value / totalIncome) * 100);
-        }
-        else {
+        } else {
             this.percentage = -1;
         }
     };
     Expense.prototype.getPercentage = function () {
         return this.percentage;
     };
-
 
     let Income = function (id, description, value) {
         this.id = id;
@@ -45,10 +43,8 @@ let budgetControl = (() => {
         let sum = 0;
         data.allItems[type].forEach(curElement => {
             sum = sum + curElement.value;
-
         });
         data.totals[type] = sum;
-
     };
     return {
         addItem: (type, des, val) => {
@@ -59,16 +55,14 @@ let budgetControl = (() => {
             if (data.allItems[type].length > 0) {
                 ID = data.allItems[type][data.allItems[type].length - 1].id + 1;
 
-            }
-            else {
+            } else {
                 ID = 0;
             }
 
             // create new item based on 'inc' and 'exp'
             if (type === 'expense') {
                 newItem = new Expense(ID, des, val);
-            }
-            else if (type === 'income') {
+            } else if (type === 'income') {
                 newItem = new Income(ID, des, val);
             }
 
@@ -87,15 +81,12 @@ let budgetControl = (() => {
             // 2. Calculate the budget :: income-expenses
             data.budget = data.totals.income - data.totals.expense;
 
-
             // 3. Calcualte the percentage of income that we  spent
             if (data.totals.income > 0) {
                 data.percentage = Math.round((data.totals.expense / data.totals.income) * 100);
-            }
-            else {
+            } else {
                 data.percentage = -1;
             }
-
         },
 
         // CALCULATE PERCENTAGE
@@ -103,7 +94,6 @@ let budgetControl = (() => {
             data.allItems.expense.forEach((cur) => {
                 cur.calPercentage(data.totals.income);
             });
-
         },
 
         getPercentages: () => {
@@ -111,7 +101,6 @@ let budgetControl = (() => {
                 return cur.getPercentage();
             });
             return allPercentage;
-
         },
 
         getBudget: () => {
@@ -121,7 +110,6 @@ let budgetControl = (() => {
                 totIncome: data.totals.income,
                 totExpense: data.totals.expense
             }
-
         },
 
         deleteItem: (type, id) => {
@@ -133,12 +121,9 @@ let budgetControl = (() => {
             if (index !== -1) {
                 data.allItems[type].splice(index, 1);
             }
-
         },
 
-
         testing: () => {
-            console.log(data.allItems);
 
         }
     };
@@ -146,4 +131,3 @@ let budgetControl = (() => {
 
 export default budgetControl;
 budgetControl.testing();
-
